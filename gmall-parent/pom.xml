@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>1.5.9.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -14,8 +14,6 @@
     <artifactId>gmall-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-    <!--阿里云Maven仓库-->
     <repositories>
         <repository>
             <id>alimaven</id>
@@ -55,6 +53,7 @@
     </properties>
 
     <dependencyManagement>
+
         <dependencies>
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -104,6 +103,8 @@
                 <artifactId>batik-ext</artifactId>
                 <version>${batik-ext.version}</version>
             </dependency>
+
+
 
             <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
             <dependency>
@@ -159,6 +160,16 @@
             </dependency>
 
         </dependencies>
+
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
