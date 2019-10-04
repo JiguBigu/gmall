@@ -1,34 +1,29 @@
-package com.workbook.gmall.user.entity;
+package com.workbook.gmall.entity;
+
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author Jigubigu
- * @version 1.0
- * @date 2019/10/4 14:44
- */
 public class UmsMember implements Serializable {
 
-
     private String id;
-    private String memberLevelId;
+    private String         memberLevelId;
     private String username;
-    private String password;
+    private String         password;
     private String nickname;
-    private String phone;
+    private String         phone;
     private int status;
     private Date createTime;
     private String icon;
-    private int gender;
+    private int         gender;
     private Date birthday;
-    private String city;
+    private String        city;
     private String job;
-    private String personalizedSignature;
+    private String         personalizedSignature;
     private int sourceType;
-    private int integration;
+    private int         integration;
     private int growth;
-    private int luckeyCount;
+    private int         luckeyCount;
     private int historyIntegration;
 
     public String getId() {
@@ -181,30 +176,5 @@ public class UmsMember implements Serializable {
 
     public void setHistoryIntegration(int historyIntegration) {
         this.historyIntegration = historyIntegration;
-    }
-
-    @Override
-    public String toString() {
-        return "UmsMember{" +
-                "id='" + id + '\'' +
-                ", memberLevelId='" + memberLevelId + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", phone='" + phone + '\'' +
-                ", status=" + status +
-                ", createTime=" + createTime +
-                ", icon='" + icon + '\'' +
-                ", gender=" + gender +
-                ", birthday=" + birthday +
-                ", city='" + city + '\'' +
-                ", job='" + job + '\'' +
-                ", personalizedSignature='" + personalizedSignature + '\'' +
-                ", sourceType=" + sourceType +
-                ", integration=" + integration +
-                ", growth=" + growth +
-                ", luckeyCount=" + luckeyCount +
-                ", historyIntegration=" + historyIntegration +
-                '}';
     }
 }

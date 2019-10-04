@@ -1,6 +1,6 @@
-package com.workbook.gmall.user.service;
+package com.workbook.gmall.service;
 
-import com.workbook.gmall.user.entity.UmsMember;
+import com.workbook.gmall.entity.UmsMember;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
 package com.workbook.gmall.user.service.impl;
 
-import com.workbook.gmall.user.entity.UmsMember;
+
+import com.workbook.gmall.entity.UmsMember;
 import com.workbook.gmall.user.mapper.UserMapper;
-import com.workbook.gmall.user.service.UserService;
+import com.workbook.gmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
