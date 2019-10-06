@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workbook.gmall.manage.mapper.AttrInfoMapper">
+    <select id="selectInfoListById" resultType="com.workbook.gmall.entity.PmsBaseAttrInfo">
+        SELECT t.* FROM  pms_base_attr_info t WHERE t.catalog3_id = #{catalog3Id}
+    </select>
+</mapper>
