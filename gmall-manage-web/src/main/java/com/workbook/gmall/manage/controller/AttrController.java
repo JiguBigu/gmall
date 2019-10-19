@@ -2,11 +2,10 @@ package com.workbook.gmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.workbook.gmall.entity.PmsBaseAttrInfo;
+import com.workbook.gmall.entity.PmsBaseAttrValue;
 import com.workbook.gmall.service.AttrService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,15 +15,43 @@ import java.util.List;
  * @date 2019/10/6 21:56
  */
 @RestController
-@CrossOrigin
+
 public class AttrController {
+
 
     @Reference
     AttrService attrService;
 
-    @GetMapping("/attrInfoList")
+    @RequestMapping("/attrInfoList")
+    @CrossOrigin
     public List<PmsBaseAttrInfo> attrInfoList(String catalog3Id){
         List<PmsBaseAttrInfo> pmsBaseAttrInfoList = attrService.getAttrInfoList(catalog3Id);
         return pmsBaseAttrInfoList;
+    }
+
+    @RequestMapping("/saveAttrInfo")
+    @CrossOrigin
+    public String saveAttrInfo(@RequestBody PmsBaseAttrInfo pmsBaseAttrInfo){
+        if(pmsBaseAttrInfo == null){
+            return "success";
+        }
+        PmsBaseAttrInfo pmsBaseAttrInfo1 = pmsBaseAttrInfo;
+
+        boolean success =false;
+        success = attrService.saveAttrInfo(pmsBaseAttrInfo);
+        String successStr = "";
+        if(success){
+            successStr = "success";
+        }else {
+            successStr = "default";
+        }
+        return successStr;
+    }
+
+    @PostMapping("getAttrValueList")
+    @CrossOrigin
+    public List<PmsBaseAttrValue> getAttrValueList(String attrId){
+        List<PmsBaseAttrValue> list = attrService.getAttrValueList(attrId);
+        return list;
     }
 }
