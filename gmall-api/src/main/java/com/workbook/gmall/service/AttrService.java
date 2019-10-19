@@ -2,6 +2,8 @@ package com.workbook.gmall.service;
 
 import com.workbook.gmall.entity.PmsBaseAttrInfo;
 import com.workbook.gmall.entity.PmsBaseAttrValue;
+import com.workbook.gmall.entity.PmsBaseSaleAttr;
+import com.workbook.gmall.entity.PmsProductSaleAttr;
 
 import java.util.List;
 
@@ -16,4 +18,6 @@ public interface AttrService {
     boolean saveAttrInfo(PmsBaseAttrInfo pmsBaseAttrInfo);
 
     List<PmsBaseAttrValue> getAttrValueList(String attrId);
+
+    List<PmsBaseSaleAttr> getBaseSaleAttrList();
 }

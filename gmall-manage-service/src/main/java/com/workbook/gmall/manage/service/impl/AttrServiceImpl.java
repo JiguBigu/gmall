@@ -3,8 +3,11 @@ package com.workbook.gmall.manage.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.workbook.gmall.entity.PmsBaseAttrInfo;
 import com.workbook.gmall.entity.PmsBaseAttrValue;
+import com.workbook.gmall.entity.PmsBaseSaleAttr;
+import com.workbook.gmall.entity.PmsProductSaleAttr;
 import com.workbook.gmall.manage.mapper.AttrInfoMapper;
 import com.workbook.gmall.manage.mapper.AttrValueMapper;
+import com.workbook.gmall.manage.mapper.PmsBaseSaleAttrMapper;
 import com.workbook.gmall.service.AttrService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,6 +25,9 @@ public class AttrServiceImpl implements AttrService {
 
     @Autowired
     private AttrValueMapper attrValueMapper;
+
+    @Autowired
+    private PmsBaseSaleAttrMapper pmsBaseSaleAttrMapper;
 
     @Override
     public List<PmsBaseAttrInfo> getAttrInfoList(String catalog3Id) {
@@ -69,5 +75,11 @@ public class AttrServiceImpl implements AttrService {
     public List<PmsBaseAttrValue> getAttrValueList(String attrId) {
         List<PmsBaseAttrValue> list = attrValueMapper.selectAttrValueById(attrId);
         return list;
+    }
+
+    @Override
+    public List<PmsBaseSaleAttr> getBaseSaleAttrList() {
+        List<PmsBaseSaleAttr> pmsProductSaleAttrs = pmsBaseSaleAttrMapper.selectAllBaseSaleAttr();
+        return pmsProductSaleAttrs;
     }
 }

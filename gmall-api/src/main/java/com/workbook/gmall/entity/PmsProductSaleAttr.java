@@ -57,4 +57,15 @@ public class PmsProductSaleAttr implements Serializable {
     public void setPmsProductSaleAttrValueList(List<PmsProductSaleAttrValue> pmsProductSaleAttrValueList) {
         this.pmsProductSaleAttrValueList = pmsProductSaleAttrValueList;
     }
+
+    @Override
+    public String toString() {
+        return "PmsProductSaleAttr{" +
+                "id='" + id + '\'' +
+                ", productId='" + productId + '\'' +
+                ", saleAttrId='" + saleAttrId + '\'' +
+                ", saleAttrName='" + saleAttrName + '\'' +
+                ", pmsProductSaleAttrValueList=" + pmsProductSaleAttrValueList +
+                '}';
+    }
 }

@@ -3,6 +3,8 @@ package com.workbook.gmall.manage.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.workbook.gmall.entity.PmsBaseAttrInfo;
 import com.workbook.gmall.entity.PmsBaseAttrValue;
+import com.workbook.gmall.entity.PmsBaseSaleAttr;
+import com.workbook.gmall.entity.PmsProductSaleAttr;
 import com.workbook.gmall.service.AttrService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -53,5 +55,12 @@ public class AttrController {
     public List<PmsBaseAttrValue> getAttrValueList(String attrId){
         List<PmsBaseAttrValue> list = attrService.getAttrValueList(attrId);
         return list;
+    }
+
+    @PostMapping("baseSaleAttrList")
+    @CrossOrigin
+    public List<PmsBaseSaleAttr> baseSaleAttrList(){
+        List<PmsBaseSaleAttr> pmsProductSaleAttrs = attrService.getBaseSaleAttrList();
+        return pmsProductSaleAttrs;
     }
 }
